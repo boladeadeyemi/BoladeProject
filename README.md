@@ -52,7 +52,7 @@ my-project/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/group6-capstone.git
+git clone https://github.com/boladeadeyemi/BoladeProject.git
 cd group6-capstone
 
 # Build and start all services
