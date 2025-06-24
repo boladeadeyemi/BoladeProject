@@ -6,7 +6,7 @@ services:
       context: ./Backend
       dockerfile: Dockerfile
     expose:
-      - "5000"  # Internal only; no need to publish to host
+      - "5000" # Internal only; no need to publish to host
     networks:
       - app-network
 
@@ -15,7 +15,7 @@ services:
       context: ./Frontend
       dockerfile: Dockerfile
     ports:
-      - "80:80"  # Expose to host at port 80 for public access
+      - "80:80" # Expose to host at port 80 for public access
     depends_on:
       - backend
     networks:
