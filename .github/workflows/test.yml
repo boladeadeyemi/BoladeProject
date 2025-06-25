@@ -1,0 +1,20 @@
+name: 🔐 Test SSH to Azure VM
+
+on:
+  workflow_dispatch:  # allows you to run it manually from GitHub
+
+jobs:
+  test-ssh:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: SSH into Azure VM and run 'ls'
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          echo "✅ SSH worked!"
+          hostname
+          ls -l ~/myapp
