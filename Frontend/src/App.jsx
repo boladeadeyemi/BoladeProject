@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 
+// ✅ Use internal Docker network name for backend
+const BACKEND_URL = "http://backend:5000/api/groupmembers";
+
 function App() {
   const [array, setArray] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -10,7 +13,7 @@ function App() {
   useEffect(() => {
     const fetchAPI = async () => {
       try {
-        const response = await axios.get("/api/groupmembers"); // ✅ RELATIVE path for production
+        const response = await axios.get(BACKEND_URL);
         setArray(response.data?.groupMembers || []);
       } catch (error) {
         console.error("API error:", error);
