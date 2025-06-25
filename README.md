@@ -8,7 +8,7 @@ This is a full-stack web application that allows users to search for group membe
 
 - 🔎 Search for a group member by name
 - ⚡ Fast, responsive React frontend
-- 🐍 Lightweight Flask API backend
+- 🐍 Lightweight node-express backend
 - 🔗 Frontend communicates with backend via REST API
 - 📦 Dockerized with multi-service setup
 - 🔄 Ready for CI/CD with GitHub Actions (optional)
@@ -20,14 +20,13 @@ This is a full-stack web application that allows users to search for group membe
 ```
 my-project/
 ├── Backend/
-│   ├── server.py
+│   ├── app.py
+|---|-- Dockerfile
 ├── Frontend/
 │   ├── src/
-│   ├── public/
+│   ├── Dockerfile
 │   ├── package.json
-├── Dockerfile.backend
 ├── docker-compose.yml
-├── requirements.txt
 └── README.md
 ```
 
