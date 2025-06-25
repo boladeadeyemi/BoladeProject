@@ -14,7 +14,7 @@ services:
     build:
       context: ./Frontend
       dockerfile: Dockerfile
-    ports:
+    ports:          
       - "80:80"  # 👈 Makes frontend available at http://<IP>/
     depends_on:
       - backend
