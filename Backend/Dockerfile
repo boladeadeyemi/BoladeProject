@@ -1,17 +1,11 @@
-# syntax=docker/dockerfile:1
-
-FROM python:3.13.5
+FROM node:22.15.0
 
 WORKDIR /app
 
-# Copy only what's needed
-COPY requirements.txt .
+COPY package*.json ./
+RUN npm install
 
-# Install dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
-
-# Copy all application code (relative to Dockerfile)
 COPY . .
 
-# Run the server
-CMD ["python", "server.py"] 
+EXPOSE 5000
+CMD ["node", "server.js"]
