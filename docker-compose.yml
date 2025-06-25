@@ -3,7 +3,7 @@ version: "3.8"
 services:
   backend:
     image: bgin86/backend
-    build: ./Backend
+    build: ./backend
     ports:
       - "5000:5000"
     networks:
@@ -11,7 +11,7 @@ services:
 
   frontend:
     image: bgin86/frontend
-    build: ./Frontend
+    build: ./frontend
     ports:
       - "80:80"
     environment:
