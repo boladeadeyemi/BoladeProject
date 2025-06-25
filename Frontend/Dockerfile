@@ -12,6 +12,7 @@ RUN npm run build
 # Stage 2: Serve with NGINX
 FROM nginx:stable-alpine
 
+# Copy built app to NGINX's public folder
 COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80

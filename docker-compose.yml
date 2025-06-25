@@ -6,7 +6,7 @@ services:
       context: ./Backend
       dockerfile: Dockerfile
     ports:
-      - "5000:5000" # Optional: only needed if you want to access backend directly
+      - "5000:5000"  # Optional, expose for API access
     networks:
       - app-network
 
@@ -15,7 +15,7 @@ services:
       context: ./Frontend
       dockerfile: Dockerfile
     ports:
-      - "80:80" # Expose React app on port 80 (public)
+      - "80:80"  # 👈 Makes frontend available at http://<IP>/
     depends_on:
       - backend
     networks:
