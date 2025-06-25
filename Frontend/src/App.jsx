@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 // ✅ Use internal Docker network name for backend
-const BACKEND_URL = "http://10.1.0.6:5000/api/groupmembers";
+const BACKEND_URL = "/api/groupmembers";
 
 function App() {
   const [array, setArray] = useState([]);
