@@ -3,9 +3,11 @@ FROM node:22.15.0
 WORKDIR /app
 
 COPY package*.json ./
-RUN RUN npm ci --production
+RUN npm instal -g nodemon
+RUN npm install
 
 COPY . .
 
-EXPOSE 5000
-CMD ["node", "server.js"]
+EXPOSE 3000
+
+CMD [ "npm", "start" ]

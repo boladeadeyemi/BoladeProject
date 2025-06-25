@@ -15,5 +15,5 @@ FROM nginx:stable-alpine
 # Copy built app to NGINX's public folder
 COPY --from=build /app/dist /usr/share/nginx/html
 
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 8080
+CMD ["nginx", "-g", "8080", "daemon off;"]
