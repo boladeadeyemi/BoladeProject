@@ -32,3 +32,9 @@ jobs:
         username: ${{ secrets.AZURE_USER }}
         key: ${{ secrets.AZURE_SSH_KEY }}
         port:  22
+        script: |
+            cd ~/myapp  # <-- update this path if needed
+            git pull origin main || true  # optional if repo is cloned on server
+            docker-compose down
+            docker-compose pull
+            docker-compose up -d --remove-orphans
