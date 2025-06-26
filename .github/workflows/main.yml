@@ -19,5 +19,10 @@ jobs:
     - name: Push Frontend Images
       run:  |
         docker push ${{ secrets.DOCKER_USERNAME }}/frontend
-        
+    - name: Build Backend Images
+      run:  |
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/backend ./Backend
+    - name: Push Backend Images
+      run:  |
+        docker push ${{ secrets.DOCKER_USERNAME }}/backend        
         
