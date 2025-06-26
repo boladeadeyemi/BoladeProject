@@ -23,7 +23,7 @@ jobs:
     - name: 🛠️ Build and Push Backend Docker Image
       run: |
         docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend ./backend
-        docker push ${{ secrets.DOCKERHUB_USERNAME }}/backend-image
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/backend
 
     - name: 🔑 Add SSH key
       uses: webfactory/ssh-agent@v0.9.0
