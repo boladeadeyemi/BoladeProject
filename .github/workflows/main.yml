@@ -16,4 +16,5 @@ jobs:
     - name: Build Images
       run:  |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend ./Frontend
+        docker push ${{ secrets.DOCKER_USERNAME }}/frontend
         
