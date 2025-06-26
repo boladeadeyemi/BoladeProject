@@ -32,8 +32,8 @@ jobs:
 
     - name: 🚀 SSH and Deploy to Azure VM
       run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.AZURE_USER }}@${{ secrets.AZURE_HOST }} << EOF
-          cd /home/${{ secrets.AZURE_USER }}/your-deployment-folder
+        ssh -o StrictHostKeyChecking=no ${{ secrets.AZURE_USER }}@${{ secrets.AZURE_HOST }} << 'EOF'
+          cd /home/${USER}/myapp
           docker-compose pull
           docker-compose up -d
         EOF
