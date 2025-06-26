@@ -15,5 +15,5 @@ jobs:
         password: ${{ secrets.DOCKER_TOKEN }}
     - name: Build Images
       run:  |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend ./frontend
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend ./Frontend
         
