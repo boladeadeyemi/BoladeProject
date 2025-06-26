@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    name: Build and Deploy Dockerized App
+    name: Build ad Deploy Dockerized App
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +32,7 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/backend ./Backend
 
-      - name: Push Backend-Image
+      - name: Push BackendImage
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/backend
 
